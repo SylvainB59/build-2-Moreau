@@ -17,5 +17,11 @@
     </head>
     <body>
         <header>
-
+            <a href="">
+                <figure>
+                    <img src="" alt="">
+                </figure>
+            </a>
+            <h1>BUILD-2-MOREAU</h1>
+            <p>Gestionnaire de projets</p>
         </header>
