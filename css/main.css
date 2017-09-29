@@ -96,6 +96,47 @@ textarea {
    ========================================================================== */
 
 /*start of common rules*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.asideCo form {
+    border-radius: 5px;
+}
+
+.border {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/************************************
+
+header {
+    background-color: grey;
+}
+
+aside {
+    text-align: center;
+}
+
+aside form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+aside form p {
+    width: 50%;
+}
+
+form label, form label~input {
+    width: 80%;
+}
+
+************************************/
 
 /*Enc of common rules*/
 

@@ -4,18 +4,24 @@ include('header.php');
 
 ?>
 
-		<aside>
-			<p>Connect</p>
-			<form action="" method="post">
-				<p>
-					<label for="pseudo">PSEUDO</label>
-					<input type="text" name="pseudo" id="pseudo">
-				</p>
-				<p>
-					<label for="password">PASSWORD</label>
-					<input type="password" name="password" id="password">
-				</p>
-				<input type="submit" value="OK">
-			</form>
-			<p><a href="#">Sign in</a></p>
+		<aside class="asideCo container-fluid text-center">
+			<div class="row">
+				<div class="col-6 mx-auto border">
+					<p class="col-12">CONNECT</p>
+					<form class="col-12" action="" method="post">
+						<div class="row">
+							<p class="col-6">
+								<label class="col-12" for="pseudo">PSEUDO</label>
+								<input class="col-12" type="text" name="pseudo" id="pseudo" autofocus required>
+							</p>
+							<p class="col-6">
+								<label class="col-12" for="password">PASSWORD</label>
+								<input class="col-12" type="password" name="password" id="password" required>
+							</p>
+						</div>
+						<input type="submit" value="OK" class="col-3 mx-auto">
+					</form>
+					<p class="col-12">Or <a href="#">Sign in !</a></p>
+				</div>
+			</div>
 		</aside>

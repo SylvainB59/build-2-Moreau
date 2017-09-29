@@ -16,12 +16,18 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <header>
-            <a href="">
-                <figure>
-                    <img src="" alt="">
-                </figure>
-            </a>
-            <h1>BUILD-2-MOREAU</h1>
-            <p>Gestionnaire de projets</p>
+        <header class="container-fluid">
+            <div class="row">
+                <aside class="col-4">
+                    <a href="">
+                        <figure>
+                            <img src="" alt="">
+                        </figure>
+                    </a>
+                </aside>
+                <div class="headerTitle col-12 text-center">
+                    <h1>BUILD-2-MOREAU</h1>
+                    <p>Gestionnaire de projets</p>
+                </div>
+            </div>
         </header>
