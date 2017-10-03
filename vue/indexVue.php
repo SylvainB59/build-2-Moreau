@@ -10,7 +10,7 @@ include('template/aside.php');
 		<form action="" method="post" class="col-3 mx-auto choix">
 			<p class="">Show by type</p>
 			<select name="types" id="" class="col-12">
-				<option value="all" selected>all</option>
+				<!-- <option value="all" selected>all</option> -->
 				<?php 
 				$type_name = getNameOf('types');
 				foreach ($type_name as $key => $value)
@@ -26,7 +26,7 @@ include('template/aside.php');
 		<form action="" method="post" class="col-3 mx-auto choix">
 			<p>Show by member</p>
 			<select name="members" id="" class="col-12">
-				<option value="all" selected>all</option>
+				<!-- <option value="all" selected>all</option> -->
 				<?php 
 				$member_name = getNameOf('members');
 				foreach ($member_name as $key => $value)
@@ -37,14 +37,23 @@ include('template/aside.php');
 			</select>
 			<input type="submit">
 		</form>
+
+		<form action="" method="post">
+			<input type="submit" name="reset" value="reset">
+		</form>
 	</article>
 
 	<article class="row justify-content-between">
 	<!-- preview of project in main index -->
 		<?php
-		// var_dump($_POST['types']);
-		// var_dump($_POST['members']);
-		$project = getAllProjectsPreview();
+		$project = getProjectsPreview();
+		
+		// if no result
+		if(empty($project)){
+			echo 'NOTHING TO SHOW';
+		}
+
+		// elseif show by choice
 		foreach ($project as $key => $value)
 		{
 		?>

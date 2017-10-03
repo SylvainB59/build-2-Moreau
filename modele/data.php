@@ -30,8 +30,10 @@ function getAllProjectsPreview()
 	return $donnee;
 }
 
+// show projects by types
 function getProjectsPreviewByTypes()
 {
+	$info = $_POST['types'];
 	$req = getBdd()->query('SELECT 
 		                       p.id,
 		                       p.name projectName,
@@ -43,15 +45,17 @@ function getProjectsPreviewByTypes()
 	                       ON p.id_type = t.id
 	                       INNER JOIN members m
 	                       ON p.id_member = m.id
-	                       WHERE t.name = \'' . $_POST['types'] . '\'
+	                       WHERE t.name = \'' . $info . '\'
 	                       ORDER BY limitDate DESC
 	                       ');
 	$donnee = $req->fetchAll();
 	return $donnee;
 }
 
+// show projects by members
 function getProjectsPreviewByMembers()
 {
+	$info = $_POST['members'];
 	$req = getBdd()->query('SELECT 
 		                       p.id,
 		                       p.name projectName,
@@ -63,27 +67,35 @@ function getProjectsPreviewByMembers()
 	                       ON p.id_type = t.id
 	                       INNER JOIN members m
 	                       ON p.id_member = m.id
-	                       WHERE m.name = \'' . $_POST['members'] . '\'
+	                       WHERE m.name = \'' . $info . '\'
 	                       ORDER BY limitDate DESC
 	                       ');
 	$donnee = $req->fetchAll();
 	return $donnee;
 }
 
+// select show of projects
 function getProjectsPreview()
 {
-	if (!isset($_POST['types']) OR !isset($_POST['members']) OR $_POST['types']=='all' OR $_POST['members']=='all')
+	
+	if (isset($_POST['types']))
 	{
-		getAllProjectsPreview();
-	}
-	elseif (isset($_POST['types']))
-	{
-		getProjectsPreviewByTypes();
+		$donnee = getProjectsPreviewByTypes();
 	}
 	elseif (isset($_POST['members']))
 	{
-		getProjectsPreviewByMembers();
+		$donnee = getProjectsPreviewByMembers();
 	}
+	elseif (isset($_POST['reset']))
+	{
+		$donnee = getAllProjectsPreview();
+	}
+	elseif (!isset($_POST['types']) OR !isset($_POST['members']) OR !isset($_POST['reset']))
+	{
+		$donnee = getAllProjectsPreview();
+	}
+
+	return $donnee;
 }
 
 ?>
