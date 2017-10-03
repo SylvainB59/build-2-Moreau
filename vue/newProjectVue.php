@@ -14,6 +14,7 @@ include('template/header.php');
 			<label for="">limite date(AAAA/MM/JJ)</label><br>
 			<input type="date">
 		</p>
+		<label for="types">Project type</label>
 		<select name="types" id="">
 			<?php 
 			$type_name = getNameOfType();
@@ -23,7 +24,7 @@ include('template/header.php');
 			}
 			?>
 		</select>
-
+		<input type="submit" name="addNewProject">
 		<?php
 				// if(isset($_POST['addNewProject']))
 				// {
