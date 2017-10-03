@@ -7,7 +7,7 @@ include('template/aside.php');
 <section class="container">
 	<article class="row">
 		<!-- select by TYPE -->
-		<form action="" method="post" class="col-3 mx-auto choix">
+		<form action="" method="post" class="col-3 mx-auto choix border">
 			<p class="">Show by type</p>
 			<select name="types" id="" class="col-12">
 				<!-- <option value="all" selected>all</option> -->
@@ -23,7 +23,7 @@ include('template/aside.php');
 		</form>
 
 		<!-- select by NAME -->
-		<form action="" method="post" class="col-3 mx-auto choix">
+		<form action="" method="post" class="col-3 mx-auto choix border">
 			<p>Show by member</p>
 			<select name="members" id="" class="col-12">
 				<!-- <option value="all" selected>all</option> -->
@@ -43,7 +43,7 @@ include('template/aside.php');
 		</form>
 	</article>
 
-	<article class="row justify-content-between">
+	<article class="row justify-content-around">
 	<!-- preview of project in main index -->
 		<?php
 		$project = getProjectsPreview();
@@ -52,7 +52,11 @@ include('template/aside.php');
 		if(empty($project)){
 			echo 'NOTHING TO SHOW';
 		}
-
+		?>
+			<div class="projectPreview border col-3 row text-center justify-content-center">
+				<a href="newProject.php" class="border p-4 align-self-center">ADD NEW PROJECT</a>
+			</div>
+		<?php
 		// elseif show by choice
 		foreach ($project as $key => $value)
 		{
