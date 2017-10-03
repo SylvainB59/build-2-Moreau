@@ -110,6 +110,19 @@ textarea {
     border-radius: 5px;
 }
 
+.choix {
+    text-align: center;
+}
+
+select[name="types"], select[name="members"] {
+    /*width: 100%;*/
+    text-align: center;
+}
+
+.projectPreview {
+    margin : 10px;
+}
+
 /************************************
 
 header {

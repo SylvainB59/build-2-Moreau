@@ -8,6 +8,9 @@ include('header.php');
 			<div class="row">
 				<div class="col-6 mx-auto border">
 					<p class="col-12">CONNECT</p>
+
+					<!-- formulaire de connexion -->
+
 					<form class="col-12" action="" method="post">
 						<div class="row">
 							<p class="col-6">
@@ -21,7 +24,8 @@ include('header.php');
 						</div>
 						<input type="submit" value="OK" class="col-3 mx-auto">
 					</form>
-					<p class="col-12">Or <a href="#">Sign in !</a></p>
+
+					<p class="col-12">Or <a href="signin.php">Sign in !</a></p>
 				</div>
 			</div>
 		</aside>
